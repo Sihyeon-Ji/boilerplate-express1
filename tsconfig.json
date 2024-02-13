@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		/** 기본 옵션 */
+		"target": "es2022",
+		"module": "ESNext",
+		"lib": ["es2022", "ESNext", "DOM", "DOM.Iterable"],
+		"noEmit": true,
+		"allowJs": true,
+		"checkJs": true,
+		"isolatedModules": true,
+		"removeComments": true,
+		"outDir": "./dist",
+		"sourceMap": true,
+		// "verbatimModuleSyntax": true,
+		"moduleDetection": "force",
+
+		/** 고급 옵션 */
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"useDefineForClassFields": true,
+		"allowImportingTsExtensions": true,
+
+		/** 모듈 분석 옵션 - 번들러 */
+		"moduleResolution": "Bundler",
+		"baseUrl": "./src",
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+
+		/** 검사 옵션 */
+		"strict": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noFallthroughCasesInSwitch": true,
+
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["dist"]
+}
