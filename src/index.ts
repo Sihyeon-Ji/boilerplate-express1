@@ -77,14 +77,33 @@ loadDBConnection();
 /** 백엔드 서버 port env에서 불러오기 */
 const PORT = process.env.API_PORT;
 
+/** 콘솔 실행 로그 실행 환경에 따라 다르게 만들기 */
+// let hostName: string;
+// switch (process.env.NODE_ENV) {
+// 	case "production":
+// 		hostName = "seodalgo.co.kr";
+// 		break;
+// 	case "development":
+// 		hostName = "dev-seodalgo.kro.kr";
+// 		break;
+// 	default:
+// 		hostName = "localhost";
+// }
+
 /** port listen */
 app.listen(PORT, () => {
 	console.log(`
 	┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 	┃   Server listening on port: ${PORT}    ┃
-	┃     http://localhost:${PORT}/          ┃
+	┃     http://localhost:${PORT}          ┃
 	┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	`);
+	// console.log(`
+	// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+	// ┃   Server listening on port: ${PORT}    ┃
+	// ┃     http://${hostName}:${PORT}     ┃
+	// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	// `);
 });
 
 // 에러 처리를 하지 못해서 서버가 꺼지는 것 방지
