@@ -5,6 +5,15 @@ import { dotenvRun } from "@dotenv-run/esbuild";
 
 await build({
 	plugins: [
+		// copyStaticFiles({
+		// 	src: "./static",
+		// 	dest: "./dist/static",
+		// 	dereference: true,
+		// 	errorOnExist: false,
+		// 	filter: () => true,
+		// 	preserveTimestamps: true,
+		// 	recursive: true,
+		// }),
 		clean({
 			patterns: ["./dist/*"],
 			verbose: true,

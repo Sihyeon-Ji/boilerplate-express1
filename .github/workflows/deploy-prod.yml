@@ -1,0 +1,52 @@
+name: deploy-prod
+
+on:
+  push:
+    branches:
+      - deploy-prod
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+      HOST: ${{ secrets.PROD_HOST }}
+      USER: ${{ secrets.PROD_USER }}
+
+    steps:
+      - name: Checking directory in instance
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.PROD_SSH_KEY }}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          script: |
+            [ -d ~/여기고쳐 ] && echo "여기고쳐 exists" || mkdir -p ~/여기고쳐
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Build and Deploy 여기고쳐 Service
+        run: |
+          yarn install --immutable
+          yarn build:prod
+          mkdir ~/.ssh
+          echo "$SSH_KEY" >> ~/.ssh/github-action
+          chmod 400 ~/.ssh/github-action
+          echo -e "Host github-actions\n\tUser "$USER"\n\tHostname "$HOST"\n\tIdentityFile ~/.ssh/github-action\n\tStrictHostKeyChecking No" >> ~/.ssh/config
+          rsync -avzr --delete dist/ github-actions:~/여기고쳐/
+
+      - name: Restart 여기고쳐 Service
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.PROD_SSH_KEY }}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          script: |
+            sudo systemctl restart pm2-ubuntu
+          # pm2 관련 설정을 서버에 미리 해줘야 함을 인지

@@ -47,6 +47,7 @@
 		"esbuild": "^0.20.0",
 		"esbuild-plugin-clean": "^1.0.1",
 		"eslint": "^8.56.0",
+		"eslint-plugin-node": "^11.1.0",
 		"nodemon": "^3.0.3",
 		"tsx": "^4.7.1",
 		"typescript": "^5.3.3"

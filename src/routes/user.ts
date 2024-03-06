@@ -5,6 +5,7 @@ import {
 	updateUser,
 } from "controllers/userController";
 import { isAuthenticated, isOwner } from "middlewares/authMiddleware";
+import { asyncErrorCatcher } from "middlewares/errorHandlerMiddleware";
 
 const router = express.Router();
 
@@ -15,12 +16,21 @@ const router = express.Router();
  */
 
 // http://localhost:xxxx/users
-router.get("/", getAllUsers);
+router.get("/", asyncErrorCatcher(getAllUsers));
 
 // http://localhost:xxxx/users/:id
-router.delete("/:id", isOwner, deleteUser);
+router.delete(
+	"/:id",
+	asyncErrorCatcher(isOwner),
+	asyncErrorCatcher(deleteUser),
+);
 
 // http://localhost:xxxx/users/:id
-router.patch("/:id", isAuthenticated, isOwner, updateUser);
+router.patch(
+	"/:id",
+	asyncErrorCatcher(isAuthenticated),
+	asyncErrorCatcher(isOwner),
+	asyncErrorCatcher(updateUser),
+);
 
 export default router;

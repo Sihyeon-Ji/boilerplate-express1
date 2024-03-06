@@ -1,5 +1,6 @@
 import { login, register } from "controllers/authController";
 import express from "express";
+import { asyncErrorCatcher } from "middlewares/errorHandlerMiddleware";
 
 const router = express.Router();
 
@@ -10,9 +11,9 @@ const router = express.Router();
  */
 
 // http://localhost:xxxx/auth/register
-router.post("/register", register);
+router.post("/register", asyncErrorCatcher(register));
 
 // http://localhost:xxxx/auth/login
-router.post("/login", login);
+router.post("/login", asyncErrorCatcher(login));
 
 export default router;

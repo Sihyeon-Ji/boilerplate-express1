@@ -7,26 +7,21 @@ export const isAuthenticated = async (
 	res: express.Response,
 	next: express.NextFunction,
 ) => {
-	try {
-		const sessionToken = req.cookies["AUTH-COOKIE"];
+	const sessionToken = req.cookies["AUTH-COOKIE"];
 
-		if (!sessionToken) {
-			return res.sendStatus(403);
-		}
-
-		const existingUser = await getUserBySessionToken(sessionToken);
-
-		if (!existingUser) {
-			return res.sendStatus(403);
-		}
-
-		_.merge(req, { identity: existingUser });
-
-		return next();
-	} catch (error) {
-		console.log(error);
-		return res.sendStatus(400);
+	if (!sessionToken) {
+		return res.sendStatus(403);
 	}
+
+	const existingUser = await getUserBySessionToken(sessionToken);
+
+	if (!existingUser) {
+		return res.sendStatus(403);
+	}
+
+	_.merge(req, { identity: existingUser });
+
+	return next();
 };
 
 export const isOwner = async (
@@ -34,23 +29,18 @@ export const isOwner = async (
 	res: express.Response,
 	next: express.NextFunction,
 ) => {
-	try {
-		const { id } = req.params;
-		const currentUserId = String(_.get(req, "identity._id"));
+	const { id } = req.params;
+	const currentUserId = String(_.get(req, "identity._id"));
 
-		if (!currentUserId) {
-			return res.sendStatus(400);
-		}
-
-		if (currentUserId.toString() !== id) {
-			return res.sendStatus(403);
-		}
-
-		next();
-	} catch (error) {
-		console.log(error);
+	if (!currentUserId) {
 		return res.sendStatus(400);
 	}
+
+	if (currentUserId.toString() !== id) {
+		return res.sendStatus(403);
+	}
+
+	next();
 };
 
 // import { RequestHandler } from "express";

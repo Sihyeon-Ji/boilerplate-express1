@@ -33,7 +33,11 @@
 	// 	"plugin:react-hooks/recommended", // React Hooks를 위한 권장 규칙
 	// 	"plugin:@typescript-eslint/recommended" // TypeScript를 위한 권장 규칙
 	//   ],
-	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:node/recommended"
+	],
 	// 특정 규칙들을 오버라이드하거나 추가하는 섹션
 	"rules": {
 		// "react/jsx-uses-react": 0, // React를 사용할 때 'React'를 import 하지 않아도 되게 설정
@@ -41,7 +45,24 @@
 		// "react-hooks/exhaustive-deps": 1, // React Hooks의 의존성 배열을 정확하게 명시하도록 경고
 		"@typescript-eslint/no-unused-vars": ["warn"], // 사용 안 한 변수 있으면 에러처리시키는 것 경고로 바꾸기
 		// "@typescript-eslint/no-explicit-any": 0, // TypeScript에서 'any' 타입의 명시적 사용을 허용
-		"@typescript-eslint/no-explicit-any": ["off"] // any error 표시 끄기
+		"@typescript-eslint/no-explicit-any": ["off"], // any error 표시 끄기
+		"node/no-missing-import": [
+			"off",
+			{
+				"allowModules": ["electron"],
+				"resolvePaths": [],
+				"tryExtensions": [".js", ".json", ".node"]
+			}
+		],
+		"node/exports-style": ["error", "module.exports"],
+		"node/file-extension-in-import": ["off", "always"],
+		"node/prefer-global/buffer": ["error", "always"],
+		"node/prefer-global/console": ["error", "always"],
+		"node/prefer-global/process": ["error", "always"],
+		"node/prefer-global/url-search-params": ["error", "always"],
+		"node/prefer-global/url": ["error", "always"],
+		"node/prefer-promises/dns": "error",
+		"node/prefer-promises/fs": "error"
 	},
 	// ESLint가 파일을 무시하도록 하는 패턴들이다.   .eslintignore 파일을 만들어서 설정할 수도 있다.
 	"ignorePatterns": [
