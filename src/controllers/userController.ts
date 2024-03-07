@@ -1,4 +1,4 @@
-import express from "express";
+import { Request, Response } from "express";
 import { deleteUserById, getUsers, getUserById } from "models/mongo/users";
 
 //SECTION - userController
@@ -7,19 +7,13 @@ import { deleteUserById, getUsers, getUserById } from "models/mongo/users";
  * @author Sean <shji@dtol.co.kr>
  */
 
-export const getAllUsers = async (
-	req: express.Request,
-	res: express.Response,
-) => {
+export const getAllUsers = async (req: Request, res: Response) => {
 	const users = await getUsers();
 
 	return res.status(200).json(users);
 };
 
-export const deleteUser = async (
-	req: express.Request,
-	res: express.Response,
-) => {
+export const deleteUser = async (req: Request, res: Response) => {
 	const { id } = req.params;
 
 	const deletedUser = await deleteUserById(id);
@@ -27,10 +21,7 @@ export const deleteUser = async (
 	return res.json(deletedUser);
 };
 
-export const updateUser = async (
-	req: express.Request,
-	res: express.Response,
-) => {
+export const updateUser = async (req: Request, res: Response) => {
 	const { id } = req.params;
 	const { username } = req.body;
 

@@ -1,0 +1,5 @@
+model(entity)를 사용하여 데이터베이스 작업을 수행하고 결과물을 service에게 반환하는 역할
+
+repositories: model(entity)를 사용하여 데이터베이스 작업을 수행하고 결과물을 service에게 반환하는 역할과 관련된 소스 모음
+models: orm을 사용하여 table과 object 맵핑을 위한 Entity 소스 모음
+

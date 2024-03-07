@@ -7,6 +7,7 @@ import router from "routes/index";
 import { loadEnv } from "loaders/loadEnv";
 import { errorResponser } from "middlewares/errorHandlerMiddleware";
 import { loadDBConnection } from "loaders/loadDBConnection";
+import "reflect-metadata"; // typedi 관련 설정
 
 /** express */
 const app = express();

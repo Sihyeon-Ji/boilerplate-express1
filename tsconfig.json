@@ -34,8 +34,11 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"noFallthroughCasesInSwitch": true,
+		"allowSyntheticDefaultImports": true,
 
-		"allowSyntheticDefaultImports": true
+		/** typedi 관련 설정*/
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
 	},
 	"include": ["src/**/*"],
 	"exclude": ["dist"]

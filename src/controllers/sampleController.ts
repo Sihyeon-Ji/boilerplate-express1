@@ -10,6 +10,7 @@ import { returnTrueFunction } from "services/sampleService";
  * 기존 방식대로 컨트롤러에서 서비스를 호출하고
  * 그 결과에 따라
  * 이곳에서 HTTP 응답을 반환해줍니다.
+ *  Request(요청)을 받아 Service에게 비즈니스 로직 처리를 위임하고, 처리의 결과를 Response(응답)하는 역할
  */
 
 const resBaseVO: ResBaseVO<unknown> = {

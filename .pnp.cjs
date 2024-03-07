@@ -52,7 +52,9 @@ const RAW_RUNTIME_STATE =
           ["mongoose", "npm:8.1.2"],\
           ["morgan", "npm:1.10.0"],\
           ["nodemon", "npm:3.0.3"],\
+          ["reflect-metadata", "npm:0.2.1"],\
           ["tsx", "npm:4.7.1"],\
+          ["typedi", "npm:0.10.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -3680,6 +3682,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["reflect-metadata", [\
+      ["npm:0.2.1", {\
+        "packageLocation": "./.yarn/cache/reflect-metadata-npm-0.2.1-7f12b5924d-394b293bd4.zip/node_modules/reflect-metadata/",\
+        "packageDependencies": [\
+          ["reflect-metadata", "npm:0.2.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["regexpp", [\
       ["npm:3.2.0", {\
         "packageLocation": "./.yarn/cache/regexpp-npm-3.2.0-2513f32cfc-3310010895.zip/node_modules/regexpp/",\
@@ -4202,6 +4213,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["typedi", [\
+      ["npm:0.10.0", {\
+        "packageLocation": "./.yarn/cache/typedi-npm-0.10.0-d5771a2dc0-3d519795b4.zip/node_modules/typedi/",\
+        "packageDependencies": [\
+          ["typedi", "npm:0.10.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["typescript", [\
       ["patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7", {\
         "packageLocation": "./.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/",\
@@ -4317,7 +4337,9 @@ const RAW_RUNTIME_STATE =
           ["mongoose", "npm:8.1.2"],\
           ["morgan", "npm:1.10.0"],\
           ["nodemon", "npm:3.0.3"],\
+          ["reflect-metadata", "npm:0.2.1"],\
           ["tsx", "npm:4.7.1"],\
+          ["typedi", "npm:0.10.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\

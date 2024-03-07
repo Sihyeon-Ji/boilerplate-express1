@@ -3158,6 +3158,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reflect-metadata@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "reflect-metadata@npm:0.2.1"
+  checksum: 10/394b293bd4a538b644ed0e8730c5aeb1e08e78972c915b3d2cf3b302241952cfee8f8bd8a0fdf7d8c7fa78d31d0585489061624692e2577d767abd120cad968c
+  languageName: node
+  linkType: hard
+
 "regexpp@npm:^3.0.0":
   version: 3.2.0
   resolution: "regexpp@npm:3.2.0"
@@ -3623,6 +3630,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typedi@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "typedi@npm:0.10.0"
+  checksum: 10/3d519795b4d1a9edea2e5fdb9fa61bc2eca00546aeaf2dbbc1597cfed021659ca117454913022828c77f4971dd03f38a3f9a646eda374ccfb565d3ddcb661224
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^5.3.3":
   version: 5.3.3
   resolution: "typescript@npm:5.3.3"
@@ -3735,7 +3749,9 @@ __metadata:
     mongoose: "npm:^8.1.2"
     morgan: "npm:^1.10.0"
     nodemon: "npm:^3.0.3"
+    reflect-metadata: "npm:^0.2.1"
     tsx: "npm:^4.7.1"
+    typedi: "npm:^0.10.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
