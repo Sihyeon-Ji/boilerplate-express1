@@ -6,10 +6,10 @@
 	"license": "UNLICENSED",
 	"author": "Sean",
 	"type": "module",
-	"packageManager": "yarn@4.1.1",
+	"packageManager": "yarn@4.2.1",
 	"engines": {
 		"node": ">=22.0.0",
-		"yarn": ">=4.1.1"
+		"yarn": ">=4.0.0"
 	},
 	"scripts": {
 		"start": "yarn install && nodemon --watch src --ext .ts,.js --exec tsx ./src/index.ts",
