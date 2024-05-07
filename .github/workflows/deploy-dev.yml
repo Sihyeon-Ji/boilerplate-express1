@@ -24,12 +24,12 @@ jobs:
             [ -d ~/여기고쳐 ] && echo "여기고쳐 exists" || mkdir -p ~/여기고쳐
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: "22.1.0"
 
       - name: Build and Deploy 여기고쳐 Service
         run: |
